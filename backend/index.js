@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
+import bodyparser from 'body-parser';
 import routes from './routes/soccorRoute.js'
 
 const app = express();
@@ -14,8 +14,8 @@ mongoose.connect(CONNECTION_URL, {
   useUnifiedTopology: true,
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 
 routes(app);
 
