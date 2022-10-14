@@ -33,3 +33,30 @@ export const getPlayers = (req, res) => {
         res.json(Player);
     });
   };
+
+  export const getPlayerWithID = (req, res) => {
+    Player.findById(req.params.PlayerId, (err, Player) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(Player);
+    });
+  };
+
+  export const updatePalyer = (req, res) => {
+    Player.findOneAndUpdate({ _id: req.params.PlayerId}, req.body, {new: true}, (err, Player) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json(Player);
+    });
+  };
+
+  export const deletePalyer = (req, res) => {
+    Player.findOneAndRemove({ _id: req.params.PlayerId}, (err, Player) => {
+        if (err) {
+            res.send(err);
+        }
+        res.json({message: 'Player removed successfully'});
+    });
+  };

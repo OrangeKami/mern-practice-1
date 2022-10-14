@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5000;
 const CONNECTION_URL =
   "mongodb+srv://Orangekami:orangekami@mern1.lxya9uy.mongodb.net/?retryWrites=true&w=majority";
 // mongo connection
+
 mongoose.Promise = global.Promise;
 mongoose.connect(CONNECTION_URL, {
   useNewUrlParser: true,
